@@ -12,17 +12,18 @@ int main()
 		cin>>arr[i];
 	}
 	cout<<"Sorting array using selection sort...\n";
-	for(i=0; i<size; i++)
+	int min;
+	for (int i = 0; i < size; ++i)
 	{
-		for(j=i+1; j<size; j++)
+		min = i;
+		for (int j = i+1; j < size; ++j)
 		{
-			if(arr[i]>arr[j])
+			if(arr[j]<arr[min])
 			{
-				temp=arr[i];
-				arr[i]=arr[j];
-				arr[j]=temp;
+				min=j;
 			}
 		}
+		swap(arr[min],arr[i]);
 	}
 	cout<<"Now the Array after sorting is :\n";
 	for(i=0; i<size; i++)
